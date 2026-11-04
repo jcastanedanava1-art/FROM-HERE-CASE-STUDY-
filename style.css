@@ -1,0 +1,373 @@
+:root {
+  --red: #ca1e2e;
+  --black: #0d0d0e;
+  --cream: #f4f1e8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--cream);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.site-header {
+  min-height: 70px;
+  padding: 16px 4%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: var(--black);
+  border-bottom: 1px solid var(--cream);
+}
+
+.small-logo,
+.main-nav a {
+  color: var(--cream);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+}
+
+.small-logo {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.main-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.main-nav a:hover,
+.site-footer a:hover {
+  color: var(--red);
+}
+
+.menu-button {
+  display: none;
+}
+
+.framed-section {
+  margin: 20px;
+  border: 6px solid var(--cream);
+}
+
+.hero {
+  min-height: 90vh;
+  padding: 40px 4% 50px;
+  background: var(--red);
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.hero h1,
+.band-banner h2,
+.project-copy h2,
+.idea-copy h2 {
+  font-family: Impact, "Arial Narrow", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(4rem, 12vw, 10rem);
+  letter-spacing: 0.02em;
+}
+
+.hero-subtitle {
+  margin: 12px 0 34px;
+  letter-spacing: 0.5em;
+  font-size: clamp(0.8rem, 2vw, 1.3rem);
+}
+
+.poster-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  max-width: 1400px;
+  margin: 0 auto 32px;
+}
+
+.poster-row img {
+  height: min(52vw, 460px);
+  object-fit: cover;
+  box-shadow: 0 10px 24px #0005;
+}
+
+.button-link {
+  display: inline-block;
+  padding: 13px 22px;
+  border: 2px solid var(--cream);
+  color: var(--cream);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+}
+
+.button-link:hover {
+  background: var(--cream);
+  color: var(--black);
+}
+
+.band-banner {
+  height: 75vh;
+  min-height: 420px;
+  position: relative;
+  overflow: hidden;
+  border: 6px solid var(--cream);
+  margin: 20px;
+}
+
+.band-banner img {
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+
+.band-banner h2 {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  color: var(--red);
+  text-align: center;
+  font-size: clamp(4rem, 12vw, 11rem);
+}
+
+.project-section,
+.idea-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+}
+
+.project-section {
+  background: var(--red);
+}
+
+.project-copy,
+.idea-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 7% 9%;
+}
+
+.project-copy h2,
+.idea-copy h2 {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0 0 28px;
+  font-size: clamp(3rem, 6vw, 6rem);
+}
+
+.project-copy h2 span,
+.idea-copy h2 span {
+  display: inline-block;
+  width: 18px;
+  height: 1.2em;
+  flex: 0 0 18px;
+  background: var(--black);
+}
+
+.idea-copy h2 span {
+  background: var(--red);
+}
+
+.project-copy p,
+.idea-copy p {
+  max-width: 620px;
+  margin: 0 0 18px;
+  font-size: clamp(1rem, 1.6vw, 1.35rem);
+  line-height: 1.55;
+}
+
+.stadium-image,
+.idea-image {
+  margin: 0;
+  min-height: 520px;
+  position: relative;
+}
+
+.stadium-image img,
+.idea-image img {
+  height: 100%;
+  min-height: 520px;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.stadium-image figcaption,
+.idea-image figcaption {
+  position: absolute;
+  right: 20px;
+  bottom: 18px;
+  left: 20px;
+  text-align: right;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 8px #000;
+}
+
+.idea-section {
+  background: var(--black);
+}
+
+.media-section {
+  padding: 70px 6%;
+  background: var(--black);
+  border-top: 1px solid #ffffff33;
+}
+
+.media-section h2 {
+  margin: 0 0 34px;
+  color: var(--red);
+  font-family: Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.media-grid h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.video-frame,
+.map-frame {
+  aspect-ratio: 16 / 9;
+  border: 3px solid var(--cream);
+  background: #222;
+}
+
+.video-frame iframe,
+.map-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 24px 4%;
+  border-top: 1px solid var(--cream);
+  font-size: 0.8rem;
+}
+
+.site-footer a {
+  color: var(--cream);
+  text-decoration: none;
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  .menu-button {
+    display: block;
+    padding: 8px 12px;
+    background: transparent;
+    border: 1px solid var(--cream);
+    color: var(--cream);
+    text-transform: uppercase;
+  }
+
+  .main-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px 0;
+  }
+
+  .main-nav.is-open {
+    display: flex;
+  }
+
+  .poster-row {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .poster-row img {
+    height: auto;
+    aspect-ratio: 0.72;
+  }
+
+  .project-section,
+  .idea-section,
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-copy,
+  .idea-copy {
+    padding: 48px 8%;
+  }
+
+  .stadium-image,
+  .idea-image,
+  .stadium-image img,
+  .idea-image img {
+    min-height: 340px;
+  }
+
+  .idea-image {
+    order: 2;
+  }
+
+  .idea-copy {
+    order: 1;
+  }
+
+  .band-banner {
+    height: 55vh;
+    min-height: 320px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+  }
+}
+
+
+
+

@@ -1,0 +1,417 @@
+:root {
+  --red: #ca1e2e;
+  --black: #0d0d0e;
+  --cream: #f4f1e8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--cream);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.site-header {
+  min-height: 70px;
+  padding: 16px 4%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: var(--black);
+  border-bottom: 1px solid var(--cream);
+}
+
+.wordmark,
+.main-nav a {
+  color: var(--cream);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+}
+
+.wordmark {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.main-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.main-nav a:hover,
+.site-footer a:hover {
+  color: var(--red);
+}
+
+.menu-button {
+  display: none;
+}
+
+.page-frame {
+  margin: 0 2.5%;
+  border-left: 5px solid var(--cream);
+  border-right: 5px solid var(--cream);
+}
+
+.hero-image {
+  height: 80vh;
+  min-height: 420px;
+  position: relative;
+  overflow: hidden;
+  background: var(--black);
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-credit {
+  position: absolute;
+  top: 24px;
+  right: 4%;
+  margin: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  font-style: italic;
+}
+
+.moodboard-section {
+  padding: 5% 6% 0;
+  background: var(--red);
+}
+
+.moodboard-section h1,
+.poster-ending h2 {
+  margin: 0 0 30px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-family: Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(3rem, 7vw, 7rem);
+  font-weight: 400;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.moodboard-section h1 span {
+  width: 18px;
+  height: 1.1em;
+  flex: 0 0 18px;
+  background: var(--black);
+}
+
+.moodboard-layout {
+  display: grid;
+  grid-template-columns: 3fr 0.75fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.gallery-item {
+  position: relative;
+  padding: 0;
+  border: 0;
+  background: var(--black);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.gallery-item.wide-photo {
+  grid-column: span 2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.gallery-item.wide-photo img {
+  height: 190px;
+}
+
+.gallery-item:hover img,
+.gallery-item:focus-visible img {
+  transform: scale(1.04);
+}
+
+.gallery-item span {
+  display: block;
+  padding: 8px;
+  color: var(--cream);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid var(--cream);
+  outline-offset: 3px;
+}
+
+.moodboard-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.moodboard-symbols {
+  width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+}
+
+.swatches {
+  width: 100%;
+  display: grid;
+  gap: 16px;
+}
+
+.swatches div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.swatch {
+  display: block;
+  width: 55px;
+  height: 55px;
+  border: 5px solid var(--black);
+  border-radius: 14px;
+}
+
+.swatch.red {
+  background: var(--red);
+}
+
+.swatch.black {
+  background: var(--black);
+  outline: 3px solid var(--cream);
+}
+
+.swatch.cream {
+  background: var(--cream);
+}
+
+.swatches small {
+  letter-spacing: 0.16em;
+}
+
+.texture {
+  width: 65%;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.credits {
+  margin: 40px -6.8% 0;
+  padding: 22px 6%;
+  background: var(--black);
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  line-height: 1.8;
+}
+
+.poster-ending {
+  padding: 6%;
+  background: var(--black);
+  text-align: center;
+}
+
+.poster-ending h2 {
+  display: block;
+  margin: 0;
+  color: var(--red);
+  font-size: clamp(4rem, 12vw, 11rem);
+}
+
+.poster-ending > p {
+  margin: 10px 0 34px;
+  letter-spacing: 0.45em;
+}
+
+.poster-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.poster-row img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 24px 4%;
+  border-top: 1px solid var(--cream);
+  font-size: 0.8rem;
+}
+
+.site-footer a {
+  color: var(--cream);
+  text-decoration: none;
+}
+
+/* Photo gallery pop-up */
+.lightbox {
+  width: min(90vw, 1000px);
+  max-width: none;
+  padding: 50px 70px 30px;
+  border: 3px solid var(--cream);
+  background: var(--black);
+  color: var(--cream);
+}
+
+.lightbox::backdrop {
+  background: #000e;
+}
+
+.lightbox figure {
+  margin: 0;
+  text-align: center;
+}
+
+.lightbox figure img {
+  max-width: 100%;
+  max-height: 75vh;
+  margin: auto;
+  object-fit: contain;
+}
+
+.lightbox figcaption {
+  margin-top: 14px;
+  letter-spacing: 0.1em;
+}
+
+.lightbox-close,
+.lightbox-arrow {
+  position: absolute;
+  border: 0;
+  background: transparent;
+  color: var(--cream);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.lightbox-close {
+  top: 8px;
+  right: 16px;
+}
+
+.lightbox-arrow {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-arrow.previous {
+  left: 18px;
+}
+
+.lightbox-arrow.next {
+  right: 18px;
+}
+
+@media (max-width: 750px) {
+  .site-header {
+    flex-wrap: wrap;
+  }
+
+  .menu-button {
+    display: block;
+    padding: 8px 12px;
+    border: 1px solid var(--cream);
+    background: transparent;
+    color: var(--cream);
+    text-transform: uppercase;
+  }
+
+  .main-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px 0;
+  }
+
+  .main-nav.is-open {
+    display: flex;
+  }
+
+  .hero-image {
+    height: 55vh;
+    min-height: 320px;
+  }
+
+  .moodboard-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .moodboard-details {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .moodboard-symbols,
+  .texture {
+    width: 35%;
+  }
+
+  .swatches {
+    width: 45%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .swatches div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .photo-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .poster-row {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: auto;
+  }
+
+  .poster-row img {
+    height: auto;
+  }
+
+  .site-footer {
+    flex-direction: column;
+  }
+}

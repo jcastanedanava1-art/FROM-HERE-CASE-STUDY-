@@ -1,0 +1,423 @@
+:root {
+  --red: #ca1e2e;
+  --black: #0d0d0e;
+  --cream: #f4f1e8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--cream);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.site-header {
+  min-height: 70px;
+  padding: 16px 4%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: var(--black);
+  border-bottom: 1px solid var(--cream);
+}
+
+.wordmark,
+.main-nav a {
+  color: var(--cream);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+}
+
+.wordmark {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.main-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.main-nav a:hover,
+.site-footer a:hover {
+  color: var(--red);
+}
+
+.menu-button {
+  display: none;
+}
+
+.page-frame {
+  margin: 0 2.5%;
+  border-left: 5px solid var(--cream);
+  border-right: 5px solid var(--cream);
+}
+
+h1,
+h2 {
+  font-family: Impact, "Arial Narrow", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.95;
+}
+
+.concert-divider {
+  min-height: 80vh;
+  position: relative;
+  overflow: hidden;
+  background: var(--black);
+}
+
+.divider-photo {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+  filter: brightness(0.55);
+}
+
+.campaign-marks {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 7vw, 110px);
+  padding: 5%;
+}
+
+.campaign-marks img {
+  width: clamp(80px, 17vw, 250px);
+  max-height: 45vh;
+  object-fit: contain;
+}
+
+.vinyl-section {
+  background: var(--red);
+  color: var(--cream);
+  padding: 5% 6% 0;
+}
+
+.vinyl-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6%;
+  align-items: start;
+}
+
+.vinyl-intro h1,
+.insert-copy h2,
+.tickets-section h2,
+.social-heading h2 {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0;
+  font-size: clamp(3rem, 7vw, 7rem);
+}
+
+.vinyl-intro h1 span,
+.insert-copy h2 span,
+.tickets-section h2 span,
+.social-heading h2 span {
+  display: inline-block;
+  width: 18px;
+  height: 1.1em;
+  flex: 0 0 18px;
+  background: var(--black);
+}
+
+.vinyl-intro p,
+.insert-copy p,
+.social-heading p {
+  margin: 8px 0 0;
+  font-size: clamp(1rem, 1.7vw, 1.4rem);
+  line-height: 1.5;
+}
+
+.vinyl-hero {
+  width: min(100%, 1100px);
+  max-height: 620px;
+  object-fit: contain;
+  margin: 30px auto 0;
+}
+
+.vinyl-details {
+  margin: 0 -6.8%;
+  padding: 36px 6%;
+  background: var(--black);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: start;
+  gap: 30px;
+}
+
+.vinyl-details figure {
+  margin: 0;
+  text-align: center;
+}
+
+.vinyl-details figure > img,
+.record-button img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.vinyl-details figcaption {
+  margin-top: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+.vinyl-details figcaption span {
+  color: #c7c4bd;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+}
+
+.record-button {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.record-button img {
+  border-radius: 50%;
+}
+
+.record-button:focus-visible {
+  outline: 3px solid var(--cream);
+  outline-offset: 6px;
+}
+
+.record-button.is-spinning img {
+  animation: spin-record 2.4s linear infinite;
+}
+
+@keyframes spin-record {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.insert-section {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr 1fr;
+  gap: 3%;
+  padding: 5% 4%;
+  background: var(--red);
+  align-items: center;
+}
+
+.insert-copy p {
+  max-width: 420px;
+  margin-top: 28px;
+}
+
+.insert-section figure {
+  margin: 0;
+}
+
+.insert-section figure img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  box-shadow: 8px 10px 16px #0005;
+}
+
+.tickets-section {
+  padding: 5% 4%;
+  background: var(--black);
+  display: grid;
+  grid-template-columns: 0.7fr 2fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.tickets-section h2 span,
+.social-heading h2 span {
+  background: var(--red);
+}
+
+.ticket-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.ticket-gallery img {
+  width: 100%;
+  box-shadow: 6px 8px 12px #0008;
+}
+
+.ticket-caption {
+  grid-column: 2;
+  margin: 0;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.social-section {
+  padding: 5% 4%;
+  background: var(--red);
+}
+
+.social-heading {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 6%;
+  align-items: start;
+}
+
+.phone-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  max-width: 1400px;
+  margin: 38px auto 0;
+  align-items: start;
+}
+
+.phone {
+  margin: 0;
+  padding: 10px;
+  border: 4px solid #111;
+  border-radius: 42px;
+  background: #111;
+  box-shadow: 10px 14px 20px #0005;
+}
+
+.phone img {
+  width: 100%;
+  border-radius: 30px;
+}
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 24px 4%;
+  border-top: 1px solid var(--cream);
+  font-size: 0.8rem;
+}
+
+.site-footer a {
+  color: var(--cream);
+  text-decoration: none;
+}
+
+@media (max-width: 750px) {
+  .site-header {
+    flex-wrap: wrap;
+  }
+
+  .menu-button {
+    display: block;
+    padding: 8px 12px;
+    border: 1px solid var(--cream);
+    background: transparent;
+    color: var(--cream);
+    text-transform: uppercase;
+  }
+
+  .main-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px 0;
+  }
+
+  .main-nav.is-open {
+    display: flex;
+  }
+
+  .concert-divider,
+  .divider-photo {
+    min-height: 55vh;
+    height: 55vh;
+  }
+
+  .vinyl-intro,
+  .social-heading {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .vinyl-details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .insert-section {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .insert-copy {
+    grid-column: 1 / -1;
+  }
+
+  .tickets-section {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket-caption {
+    grid-column: 1;
+  }
+
+  .social-image {
+  max-width: 1500px;
+  margin: 38px auto 0;
+}
+
+.social-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+  .phone img {
+    border-radius: 18px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .insert-section,
+  .ticket-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .phone-row {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+  }
+
+  .campaign-marks img {
+    width: 25%;
+  }
+}
+.campaign-marks img {
+  width: min(70vw, 1000px);
+  max-height: 60vh;
+  object-fit: contain;
+}
