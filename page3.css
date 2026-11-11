@@ -65,37 +65,12 @@ img {
   border-right: 5px solid var(--cream);
 }
 
-.hero-image {
-  height: 80vh;
-  min-height: 420px;
-  position: relative;
-  overflow: hidden;
-  background: var(--black);
-}
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.image-credit {
-  position: absolute;
-  top: 24px;
-  right: 4%;
-  margin: 0;
-  font-size: 0.7rem;
-  letter-spacing: 0.3em;
-  font-style: italic;
-}
-
 .moodboard-section {
   padding: 5% 6% 0;
   background: var(--red);
 }
 
-.moodboard-section h1,
-.poster-ending h2 {
+.moodboard-section h1 {
   margin: 0 0 30px;
   display: flex;
   align-items: center;
@@ -116,19 +91,21 @@ img {
 
 .moodboard-layout {
   display: grid;
-  grid-template-columns: 3fr 0.75fr;
+  grid-template-columns: minmax(0, 3fr) minmax(220px, 0.75fr);
   gap: 28px;
   align-items: start;
 }
 
 .photo-gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
+  align-content: start;
 }
 
 .gallery-item {
   position: relative;
+  min-width: 0;
   padding: 0;
   border: 0;
   background: var(--black);
@@ -136,19 +113,11 @@ img {
   overflow: hidden;
 }
 
-.gallery-item.wide-photo {
-  grid-column: span 2;
-}
-
 .gallery-item img {
   width: 100%;
   height: 190px;
   object-fit: cover;
   transition: transform 0.25s ease;
-}
-
-.gallery-item.wide-photo img {
-  height: 190px;
 }
 
 .gallery-item:hover img,
@@ -185,13 +154,16 @@ img {
 }
 
 .swatches {
-  width: 100%;
+  width: 170px;
+  max-width: 100%;
+  margin: 0 auto;
   display: grid;
   gap: 16px;
 }
 
 .swatches div {
-  display: flex;
+  display: grid;
+  grid-template-columns: 55px max-content;
   align-items: center;
   gap: 12px;
 }
@@ -237,34 +209,35 @@ img {
   line-height: 1.8;
 }
 
-.poster-ending {
-  padding: 6%;
-  background: var(--black);
-  text-align: center;
-}
-
-.poster-ending h2 {
-  display: block;
-  margin: 0;
-  color: var(--red);
-  font-size: clamp(4rem, 12vw, 11rem);
-}
-
-.poster-ending > p {
-  margin: 10px 0 34px;
-  letter-spacing: 0.45em;
-}
-
-.poster-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.poster-row img {
+/* Full-width JCN artwork at the end of the page */
+.final-artwork {
+  position: relative;
   width: 100%;
-  height: 450px;
-  object-fit: cover;
+  background: var(--black);
+}
+
+.final-artwork-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.jcn-logo-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(48vw, 820px);
+  max-width: 72%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+@media (max-width: 750px) {
+  .jcn-logo-overlay {
+    width: 58%;
+    max-width: 78%;
+  }
 }
 
 .site-footer {
@@ -367,11 +340,6 @@ img {
     display: flex;
   }
 
-  .hero-image {
-    height: 55vh;
-    min-height: 320px;
-  }
-
   .moodboard-layout {
     grid-template-columns: 1fr;
   }
@@ -388,27 +356,19 @@ img {
   }
 
   .swatches {
-    width: 45%;
-    grid-template-columns: repeat(3, 1fr);
+    width: min(100%, 500px);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .swatches div {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: 8px;
   }
 
   .photo-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .poster-row {
-    grid-template-columns: 1fr;
-    max-width: 420px;
-    margin: auto;
-  }
-
-  .poster-row img {
-    height: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .site-footer {
