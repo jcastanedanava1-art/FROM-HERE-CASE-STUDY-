@@ -391,3 +391,29 @@ img {
   }
 }
 
+.poster-row img,
+.band-banner img,
+.stadium-image img,
+.idea-image img {
+  transition: transform 250ms ease, filter 250ms ease;
+  transform-origin: center;
+}
+
+@media (hover: hover) {
+  .poster-row img:hover,
+  .band-banner img:hover,
+  .stadium-image img:hover,
+  .idea-image img:hover {
+    transform: translateY(-6px) scale(1.02);
+    filter: drop-shadow(0 12px 12px rgba(0, 0, 0, 0.3));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .poster-row img,
+  .band-banner img,
+  .stadium-image img,
+  .idea-image img {
+    transition: none;
+  }
+}

@@ -500,3 +500,63 @@ h2 {
     object-fit: contain !important;
   }
 }
+.divider-photo,
+.campaign-marks img,
+.vinyl-hero,
+.vinyl-details figure:not(.record-figure) img,
+.insert-section figure img,
+.ticket-gallery img,
+.social-image img {
+  transition: transform 250ms ease, filter 250ms ease;
+  transform-origin: center;
+}
+
+@media (hover: hover) {
+  .divider-photo:hover,
+  .campaign-marks img:hover,
+  .vinyl-hero:hover,
+  .vinyl-details figure:not(.record-figure) img:hover,
+  .insert-section figure img:hover,
+  .ticket-gallery img:hover,
+  .social-image img:hover {
+    transform: translateY(-6px) scale(1.02);
+    filter: drop-shadow(0 12px 12px rgba(0, 0, 0, 0.3));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .divider-photo,
+  .campaign-marks img,
+  .vinyl-hero,
+  .vinyl-details figure:not(.record-figure) img,
+  .insert-section figure img,
+  .ticket-gallery img,
+  .social-image img {
+    transition: none;
+  }
+}
+@media (hover: hover) {
+  .concert-divider:hover .divider-photo {
+    transform: translateY(-6px) scale(1.02);
+    filter: drop-shadow(0 12px 12px rgba(0, 0, 0, 0.3));
+  }
+}
+.social-section .social-image {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.social-section .social-image img {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center top !important;
+}
+.social-heading h2 span {
+  background: var(--black);
+}

@@ -375,3 +375,31 @@ img {
     flex-direction: column;
   }
 }
+.final-artwork-photo,
+.jcn-logo-overlay {
+  transition: scale 250ms ease, translate 250ms ease, filter 250ms ease;
+  transform-origin: center;
+}
+
+@media (hover: hover) {
+  .final-artwork:hover .final-artwork-photo {
+    scale: 1.025;
+  }
+
+  .final-artwork:hover .jcn-logo-overlay {
+    translate: 0 -6px;
+    scale: 1.04;
+    filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.35));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .final-artwork-photo,
+  .jcn-logo-overlay {
+    transition: none;
+  }
+}
+.final-artwork {
+  position: relative;
+  overflow: hidden;
+}
